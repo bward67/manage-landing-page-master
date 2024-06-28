@@ -1,0 +1,685 @@
+/*-----------------
+    VARIABLES
+-------------------*/
+:root {
+  --clr-p-bright-red: hsl(12, 88%, 59%);
+  --clr-p-dark-blue: hsl(228, 39%, 23%);
+
+  --clr-dark-grayish-blue: hsl(227, 12%, 61%);
+  --clr-very-dark-blue: hsl(233, 12%, 13%);
+  --clr-very-pale-red: hsl(13, 100%, 96%);
+  --clr-very-light-gray: hsl(0, 0%, 98%);
+  --clr-white: #fff;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --br-btn: 100px;
+  --br-sml: 0.3rem;
+  --br-card: 100px 0 0 100px;
+  --br-circle: 50%;
+}
+
+/*-----------------
+    RESET
+-------------------*/
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*--------------------
+    GLOBAL VARIABLES
+----------------------*/
+body {
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: var(--clr-p-dark-blue);
+}
+main {
+  background-image: url(images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: -75% -2.9%; /*right and top*/
+  /*background-position: 3.5rem -6rem; right and top*/
+  background-size: 122%;
+}
+h1 {
+  font-weight: var(--fw-700);
+  font-size: 2.3rem;
+}
+h2 {
+  font-weight: var(--fw-700);
+  font-size: 2rem;
+}
+h3 {
+  font-weight: var(--fw-700);
+  font-size: 1rem;
+}
+h4 {
+  font-weight: var(--fw-700);
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 0 1rem 2rem 1rem;
+}
+p {
+  color: var(--clr-dark-grayish-blue);
+  line-height: 1.7;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--clr-p-dark-blue);
+  font-weight: var(--fw-500);
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+button {
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: var(--br-btn);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-dark {
+  background-color: var(--clr-p-bright-red);
+  color: var(--clr-white);
+  box-shadow: 1px 1px 8px 4px hsla(12, 88%, 59%, 0.5);
+  padding: 1rem 2rem;
+}
+.btn-light {
+  background-color: var(--clr-white);
+  color: var(--clr-p-bright-red);
+  font-weight: var(--fw-700);
+  padding: 1rem 2rem;
+}
+.btn-number {
+  background-color: var(--clr-p-bright-red);
+  color: var(--clr-white);
+  height: 2.2rem;
+  width: 4rem;
+  font-size: 1rem;
+}
+.btn-go {
+  background-color: var(--clr-p-bright-red);
+  color: var(--clr-white);
+  height: 2.5rem;
+  font-size: 0.7rem;
+}
+.btn-input {
+  background-color: var(--clr-white);
+  height: 2.5rem;
+  text-align: left;
+}
+.btn-dark:hover,
+.btn-go:hover {
+  filter: brightness(150%);
+}
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+}
+/*--------------------
+    NAV STYLES
+----------------------*/
+.nav-desktop {
+  display: none;
+  position: relative;
+}
+.nav-mobile {
+  margin-block: 3rem;
+}
+.nav-logo {
+  width: 35%;
+}
+.mobile-menu-btn-container {
+  position: relative;
+  z-index: 2;
+  width: 2rem;
+  height: 1.5rem;
+}
+.mobile-menu-btn-container > * {
+  position: absolute;
+  right: 0;
+}
+.close-icon {
+  display: none;
+}
+.nav-mobile-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  background-color: var(--clr-white);
+  border-radius: var(--br-sml);
+  position: absolute;
+  top: 5rem;
+  padding: 2rem;
+  visibility: hidden;
+}
+.nav-links-dropdown-menu a:hover {
+  color: var(--clr-dark-grayish-blue);
+}
+/*--------------------
+    INTRO
+----------------------*/
+.intro {
+  background-image: url(images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  /*background-position: -8% 120%; *right and top*/
+  background-position: 15rem 23.65rem; /*right and top*/
+  background-size: 100%;
+}
+.intro-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  text-align: center;
+}
+.intro-img img {
+  width: 100%;
+}
+
+.intro p {
+  margin-block: 1rem 2rem;
+}
+.intro .btn-dark {
+  margin-bottom: 8rem;
+}
+/*--------------------
+    WHAT'S DIFFERENT
+----------------------*/
+.whats-different {
+  text-align: center;
+}
+.whats-different-left {
+  width: 90%;
+  margin: 0 auto;
+}
+.whats-different-left p {
+  margin: 1.3rem auto 4rem auto;
+  font-size: 0.9rem;
+  width: 88%;
+}
+.card {
+  margin-left: 1rem;
+  text-align: left;
+}
+.card-topline {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--clr-very-pale-red);
+  border-radius: var(--br-card);
+}
+.card-p {
+  font-size: 0.88rem;
+  margin: 1rem 1rem 3rem 0rem;
+}
+/*--------------------
+    TESTIMONIALS
+----------------------*/
+.testimonials {
+  text-align: center;
+}
+.test-desktop {
+  display: none;
+}
+.test-mobile h2 {
+  margin-block: 1rem 4rem;
+}
+.slider {
+  position: relative;
+  height: 18rem;
+}
+.test-mobile .test-card {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-inline: 2rem;
+  position: absolute;
+  background-color: var(--clr-white);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.test-card-2,
+.test-card-3,
+.test-card-4 {
+  display: none;
+}
+.active {
+  display: block;
+}
+.test-card img {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.avatar-name {
+  font-weight: var(--fw-700);
+  margin-block: 1.5rem;
+}
+.test-card p {
+  font-size: 0.9rem;
+}
+.dot-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid var(--clr-p-bright-red);
+  border-radius: var(--br-circle);
+}
+.test-mobile button {
+  margin-block: 3rem;
+}
+.filled {
+  background-color: var(--clr-p-bright-red);
+}
+
+/*--------------------
+    CTA
+----------------------*/
+.cta {
+  background-color: var(--clr-p-bright-red);
+  color: var(--clr-white);
+  background-image: url(images/bg-simplify-section-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: 0 3rem;
+}
+.cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 6rem 5rem;
+}
+
+/*--------------------
+    FOOTER
+----------------------*/
+footer {
+  background-color: var(--clr-very-dark-blue);
+  color: var(--clr-white);
+}
+.footer-wrapper {
+  /*min-width: 100vw;
+  min-width: 100dvw; this was a new one for me*/
+  padding: 3rem 0rem;
+  display: grid;
+  /*justify-content: center; this was making it too narrow*/
+  gap: 3rem;
+  grid-template-areas:
+    "email email"
+    "link-1 link-2"
+    "socials socials"
+    "logo logo"
+    "copy-w copy-w";
+}
+
+.footer-logo {
+  grid-area: logo;
+  justify-self: center;
+}
+.socials {
+  grid-area: socials;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  margin-block: 0.5rem 1.5rem;
+  padding-right: 1rem; /*this is a bit hacky*/
+}
+.socials > * {
+  fill: var(--clr-white);
+}
+.socials svg {
+  transform-origin: left top;
+  transform: scale(1.8);
+}
+
+.socials > *:hover {
+  fill: var(--clr-p-bright-red);
+}
+footer a {
+  color: var(--clr-very-light-gray);
+  font-size: 1rem;
+  font-weight: var(--fw-400);
+}
+footer a:hover {
+  color: var(--clr-p-bright-red);
+}
+.first-links,
+.second-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.first-links {
+  grid-area: link-1;
+  margin-left: 2rem;
+}
+.second-links {
+  grid-area: link-2;
+  margin-left: 1rem;
+}
+.email-btn-container {
+  grid-area: email;
+  position: relative;
+}
+.btns {
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  gap: 0.5rem;
+}
+.btns > * {
+  width: 100%;
+}
+input {
+  border: none;
+  outline: none;
+}
+.error {
+  border: red 1px solid;
+}
+.red {
+  color: var(--clr-p-bright-red);
+}
+input::placeholder {
+  font-family: inherit;
+  padding-left: 1rem;
+}
+small {
+  color: var(--clr-p-bright-red);
+  font-size: 0.5rem;
+  position: absolute;
+  top: 2.8rem;
+  left: 2rem;
+  visibility: hidden;
+}
+.copyw {
+  font-size: 0.7rem;
+  grid-area: copy-w;
+  justify-self: center;
+  color: var(--clr-dark-grayish-blue);
+}
+
+/*!-----------------------
+/*!    MEDIA QUERIES
+/*!----------------------*/
+@media (min-width: 568px) {
+  .container {
+    width: 80%;
+  }
+  .intro {
+    background-image: none;
+  }
+  .card-p {
+    margin: 1rem 0 3.5rem 5rem;
+  }
+  .test-card p {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .email-btn-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .first-links {
+    margin-left: 7rem;
+  }
+  .second-links {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .intro,
+  .whats-different,
+  .testimonials {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .cta-wrapper {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-image: url(images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-position: -80% 63%;
+  }
+  main {
+    background-position: 115% -6.5%; /*right and top*/
+    /*background-position: 38.5rem -16rem; right and top*/
+    background-size: 55%;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+  .nav-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 3rem 8rem;
+  }
+  .nav-desktop .nav-links {
+    color: var(--clr-p-dark-blue);
+    display: flex;
+    gap: 1rem;
+  }
+  .nav-desktop .nav-links a:hover {
+    color: var(--clr-dark-grayish-blue);
+  }
+  .intro,
+  .whats-different,
+  .testimonials {
+    width: 100%;
+  }
+  .cta-wrapper {
+    width: 80%;
+  }
+  .intro-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+  .intro-content p {
+    font-size: 1.1rem;
+    margin: 1.5rem 3rem 2.5rem 0;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .whats-different {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /*display: flex;*/
+    gap: 1rem;
+    text-align: left;
+    width: 80%;
+    margin: 5rem auto 0 auto;
+  }
+  .whats-different-left {
+    width: 100%;
+  }
+  .whats-different-left p {
+    font-size: 1.1rem;
+    margin: 1.5rem 5rem 2.5rem 0;
+    padding-right: 6rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+  .card {
+    margin-left: 0;
+  }
+  .card-topline {
+    background-color: var(--clr-white);
+  }
+  .card-p {
+    font-size: 1.08rem;
+  }
+  .test-mobile {
+    display: none;
+  }
+  .test-desktop {
+    display: block;
+  }
+  .test-desktop h2 {
+    margin-block: 6rem 6rem;
+  }
+
+  .test-card-wrapper {
+    display: grid;
+    gap: 3rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 33.5%; /*it is better NOT to use a percentage
+  that is perfect divisible by 100 - linke 20% or 25% or it is not obvious that there is
+  overflowing content to the right*/
+    overflow-x: auto; /*now the scrollbar is just on this media-scroller*/
+    overscroll-behavior-inline: contain; /*so it will contain what we are scrolling left to right /x-axis - so we can't scroll
+  anything else*/
+    padding-top: 2rem;
+    margin: 0 0 2rem 0rem;
+  }
+  .test-desktop .test-card {
+    display: block;
+    background-color: var(--clr-very-light-gray);
+    padding: 0 2.4rem 2rem 2.4rem;
+    margin-bottom: 2rem;
+    /*width: 30.1rem;
+    height: auto;*/
+  }
+  .test-desktop .test-card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+  .test-desktop .test-card img {
+    margin-top: -2rem;
+  }
+  .cta {
+    margin-top: 10rem;
+    background-image: url(images/bg-simplify-section-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 14rem -5rem;
+    /*background-position: 20% 90%;*/
+    background-size: 103%;
+  }
+  .cta-wrapper h4 {
+    width: 27rem;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .cta-wrapper .btn-light {
+    width: 14rem;
+  }
+  .cta-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 3rem;
+  }
+
+  .footer-wrapper {
+    padding: 3rem 0rem;
+    display: grid;
+    grid-template-areas:
+      "logo link-1 . link-2 email"
+      "socials link-1 . link-2 copy-w";
+  }
+  .first-links {
+    margin-left: 1rem;
+  }
+  .footer-logo,
+  .socials {
+    justify-self: left;
+  }
+  .socials {
+    gap: 0.8rem;
+  }
+  .socials svg {
+    transform-origin: left top;
+    transform: scale(1);
+  }
+  .email-btn-container {
+    width: 100%;
+    justify-self: right;
+  }
+  .copyw {
+    justify-self: right;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    /* background-position: -80% 63%;*/
+    max-width: 1440px;
+  }
+
+  .intro-content p {
+    margin: 1.5rem 12rem 2.5rem 0;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  .cta {
+    background-position: 14.5rem -11rem;
+    background-size: 103%;
+  }
+  .cta .btn-light {
+    width: 10rem;
+  }
+
+  .footer-logo,
+  .socials {
+    justify-self: left;
+  }
+
+  .copyw {
+    justify-self: right;
+    margin-top: 0.8rem;
+  }
+  .first-links,
+  .second-links {
+    gap: 0.8rem;
+  }
+
+  .btns {
+    margin: 0;
+    width: 100%;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+}
